@@ -8,7 +8,7 @@
 
 <p>changes to be presented on prod</p>
 
-<p style='color:red'> Will see if changes will be shown in web browser 1</p>
+<p style='color:red'> Will see if changes will be shown in web browser 2</p>
 
 </body>
 </html>

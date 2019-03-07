@@ -20,7 +20,7 @@ pipeline {
             }
         }
         stage ('Deploy on staging slave01') {
-        	agent {label 'slave01'}
+        	agent {label 'slave02'}
         	steps {
         		// Deploy_StagingArea_asCode
         		build job : 'Deploy_StagingArea_asCode'
