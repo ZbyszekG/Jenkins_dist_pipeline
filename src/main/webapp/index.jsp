@@ -9,6 +9,7 @@
 <p>changes to be presented on prod</p>
 
 <p style='color:red'> Will see if changes will be shown in web browser 2</p>
+<p style='color:red'> added against none label master on the beginning of the jenkinsfile</p>
 
 </body>
 </html>
