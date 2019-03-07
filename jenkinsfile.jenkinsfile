@@ -31,7 +31,7 @@ pipeline {
         	steps {
         		timeout (time: 1, unit: 'HOURS') {
         			//input message
-        			input message 'Approve PRODUCTION environment?'
+        			input message : 'Approve PRODUCTION environment?'
         		}
         		build job : 'Deploy_to_Production_asCode'
         	}
