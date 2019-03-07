@@ -24,7 +24,7 @@ pipeline {
                 timeout (time: 1, unit: 'HOURS'){
             		input message: 'Waiting for successful artifact archivisation'
             	}
-                build job : 'Deploy_StagingArea_Pipeline'
+                build job : 'Deploy_Servlet_to_StagingArea'
             }
         }
         stage ('Deploy to production' ){
