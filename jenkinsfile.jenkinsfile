@@ -1,7 +1,8 @@
 pipeline {
-    agent any
+    agent none
     stages {
         stage ('Build Servlet Project') {
+        	agent {label 'slave01'}
             steps {
                //echo "Initializing the Code File"
                /* For Windows machine */
