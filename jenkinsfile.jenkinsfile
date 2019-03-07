@@ -26,5 +26,23 @@ pipeline {
         		build job : 'Deploy_StagingArea_asCode'
         	}
         }
+         stage ('Deploy on production slave02') {
+        	agent {label 'slave01'}
+        	steps {
+        		timeout (time: 1, unit: 'HOURS') {
+        			//input message
+        			input message 'Approve PRODUCTION environment?'
+        		}
+        		build job : 'Deploy_to_Production_asCode'
+        	}
+        	post {
+        		success {
+        			echo 'Deployment on PRODUCTION is successful'
+        		}
+        		failure {
+        			echo 'Deployment failure on PRODUCTION'
+        		}
+        	}
+        }
     }
 }
