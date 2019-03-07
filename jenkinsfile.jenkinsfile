@@ -19,31 +19,5 @@ pipeline {
             	}
             }
         }
-        stage ('Deploy Build in Staging Area'){
-        	agent {label 'slave02'}
-            steps{
-                echo "Starting freestyle Jenkins project ..."
-                timeout (time: 1, unit: 'HOURS'){
-            		input message: 'Waiting for successful artifact archivisation'
-            	}
-                build job : 'Deploy_StagingArea_PipelineAsCode'
-            }
-        }
-        stage ('Deploy to production' ){
-            steps{
-            	timeout (time: 2, unit: 'HOURS'){
-            		input message: 'Approve PRODUCTION Deployment?'
-            	}
-                build job : 'Deploy_Production_Pipeline' 
-            }
-            post{
-            	success{
-            		echo "Deployment on PRODUCTION is Successfull"
-            	}
-            	failure{
-            		echo "Deployment Failure on PRODUCTION"
-            	}
-            }
-        }
     }
 }
