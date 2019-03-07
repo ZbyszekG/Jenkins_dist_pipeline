@@ -11,11 +11,12 @@ pipeline {
                
                /* For Mac & Linux machine */
                sh 'mvn clean package'
+               archiveArtifacts artifacts : '**/*.war'
             }
             post {
             	success{
-            		echo "Now archiving"
-               		archiveArtifacts artifacts : '**/*.war'
+            		echo "Now archiving again"
+               		//archiveArtifacts artifacts : '**/*.war'
             	}
             }
         }
